@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!--
+      Need a visual blank slate?
+      Remove all code in `styles.css`!
+    -->
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>North Luzon Philippines State College</h1>
+      <canvas id="myChart"></canvas>
+    </main>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: [
+          '2012–2013',
+          '2013–2014',
+          '2014–2015',
+          '2015–2016',
+          '2016–2017',
+          '2017–2018',
+          '2018–2019',
+        ],
+        datasets: [
+          {
+            label: 'Number of Graduates',
+            data: [409, 505, 579, 603, 644, 728, 755],
+            backgroundColor: [
+              '#FF6384',
+              '#36A2EB',
+              '#FFCE56',
+              '#4BC0C0',
+              '#9966FF',
+              '#FF9F40',
+              '#E7E9ED',
+            ],
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: true,
+            position: 'top',
+          },
+          tooltip: {
+            enabled: true,
+          },
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      },
+    });
+  </script>
+</html>
